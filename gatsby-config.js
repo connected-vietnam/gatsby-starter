@@ -47,6 +47,7 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-javascript-frontmatter',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
