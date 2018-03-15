@@ -1,5 +1,5 @@
 {
-  "name": "@connected-vietnam/web-design",
+  "name": "gatsby-starter",
   "description": "Blog tài liệu về thiết kế website của Connected",
   "version": "1.0.0",
   "author": "Chau Hua <chau@connected.com.vn>",
@@ -16,6 +16,7 @@
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.7",
     "gatsby-plugin-sharp": "^1.6.41",
+    "gatsby-plugin-sitemap": "^1.2.16",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-remark-copy-linked-files": "^1.5.30",
     "gatsby-remark-images": "^1.5.56",
@@ -45,7 +46,10 @@
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.67.1",
     "gh-pages": "^1.1.0",
-    "prettier": "^1.11.1"
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "prettier-eslint-cli": "^4.7.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -67,6 +71,16 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "precommit": "lint-staged",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "parser": "flow"
   }
 }

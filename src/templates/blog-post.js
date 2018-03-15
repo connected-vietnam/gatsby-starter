@@ -8,7 +8,7 @@ import { rhythm, scale } from '../utils/typography'
 
 function BlogPostTemplate({ data, pathContext }: *) {
   const post = data.markdownRemark
-  const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+  const siteTitle = get(data, 'site.siteMetadata.title')
   const { previous, next } = pathContext
 
   return (
